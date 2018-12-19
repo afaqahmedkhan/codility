@@ -38,16 +38,9 @@ Write an efficient algorithm for the following assumptions:
 function solution(A) {
   let unpaired = 0;
   for (let i = 0; i < A.length; i++) {
-    let idx = A.indexOf(A[i]);
-    console.log("A[i]", A[i]);
-    console.log("idx", idx);
-    let secondOccurrence = A.indexOf(A[i], idx);
-    console.log("secondOccurrence", secondOccurrence);
-    if (secondOccurrence === -1) {
-      unpaired = A[i];
-    }
+    unpaired ^= A[i];
   }
-  console.log(unpaired);
+  return unpaired;
 }
 let A = [9, 3, 9, 3, 9, 7, 9];
 solution(A);
